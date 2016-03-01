@@ -125,21 +125,54 @@ console.log("Javascript is alive!");
 
 	//Bonus
 
-//40,40,37,39,37,39,66,65
-	arr = [38,38];
+//
+	c_arr = [38,38,40,40,37,39,37,39,66,65];
+	t_arr = [];
+	var i = 0; 
 
-	window.addEventListener('keypress', guru);
+	window.addEventListener('keydown', mk_code);
 
-	function guru (event) {
-		// debugger
-		var keyCode = event.keyCode;
+	function arraysEqual(arr1, arr2) {
+    if(arr1.length !== arr2.length)
+        return false;
+    for(var i = arr1.length; i--;) {
+        if(arr1[i] !== arr2[i])
+            return false;
+    }
 
-		switch (keyCode) {
-			case arr:
+    return true;
+}
+
+
+	function mk_code(e) {
+		var keyCode = e.keyCode;
+
+// debugger
+		if (keyCode === c_arr[i]) {
+			t_arr.push(keyCode);
+			if (arraysEqual(c_arr, t_arr)) {
 				window.alert("You are a guru!");
-				break;
+			}
+			i++;
+		}
+		else {
+			t_arr = [];
 		}
 	}
+	
+
+	// window.addEventListener('keypress', guru);
+
+	// function guru (event) {
+	// 	// debugger
+	// 	var keyCode = event.keyCode;
+
+	// 	switch (keyCode) {
+	// 		case arr:
+	// 			window.alert("You are a guru!");
+	// 			break;
+	// 	}
+	// }
 
 
 
